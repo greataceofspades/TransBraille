@@ -1,0 +1,6 @@
+kivy
+matplolib
+numpy
+opencv-python
+Pillow
+python-resize-image
