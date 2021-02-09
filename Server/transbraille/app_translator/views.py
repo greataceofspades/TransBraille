@@ -389,11 +389,12 @@ def translate(request):
     splitcells = int(split(re))
     word = []
     for x in range(splitcells):
-        temp = ""
-        temp = f"img{x+1}.png"
-        trial = resize2(temp)
-        trial= cell(trial)
-        word.append(trial)  
+        if (x<=125):
+            temp = ""
+            temp = f"img{x+1}.png"
+            trial = resize2(temp)
+            trial= cell(trial)
+            word.append(trial)  
 
     algo()
     spaces()
