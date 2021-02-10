@@ -1,0 +1,624 @@
+[
+  {
+    "model": "app_translator.brailletext",
+    "pk": 1,
+    "fields": {
+      "braille": "100000",
+      "text": "1",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 2,
+    "fields": {
+      "braille": "110000",
+      "text": "2",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 3,
+    "fields": {
+      "braille": "100100",
+      "text": "3",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 4,
+    "fields": {
+      "braille": "100110",
+      "text": "4",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 5,
+    "fields": {
+      "braille": "100010",
+      "text": "5",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 6,
+    "fields": {
+      "braille": "110100",
+      "text": "6",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 7,
+    "fields": {
+      "braille": "110110",
+      "text": "7",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 8,
+    "fields": {
+      "braille": "110010",
+      "text": "8",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 9,
+    "fields": {
+      "braille": "010100",
+      "text": "9",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 10,
+    "fields": {
+      "braille": "010110",
+      "text": "0",
+      "text_type": "number"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 11,
+    "fields": {
+      "braille": "100000",
+      "text": "a",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 12,
+    "fields": {
+      "braille": "101000",
+      "text": "b",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 13,
+    "fields": {
+      "braille": "110000",
+      "text": "c",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 14,
+    "fields": {
+      "braille": "110100",
+      "text": "d",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 15,
+    "fields": {
+      "braille": "100100",
+      "text": "e",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 16,
+    "fields": {
+      "braille": "111000",
+      "text": "f",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 17,
+    "fields": {
+      "braille": "111100",
+      "text": "g",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 18,
+    "fields": {
+      "braille": "101100",
+      "text": "h",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 19,
+    "fields": {
+      "braille": "011000",
+      "text": "i",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 20,
+    "fields": {
+      "braille": "011100",
+      "text": "j",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 21,
+    "fields": {
+      "braille": "100010",
+      "text": "k",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 22,
+    "fields": {
+      "braille": "101010",
+      "text": "l",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 23,
+    "fields": {
+      "braille": "110010",
+      "text": "m",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 24,
+    "fields": {
+      "braille": "110110",
+      "text": "n",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 25,
+    "fields": {
+      "braille": "100110",
+      "text": "o",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 26,
+    "fields": {
+      "braille": "111010",
+      "text": "p",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 27,
+    "fields": {
+      "braille": "111110",
+      "text": "q",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 28,
+    "fields": {
+      "braille": "101110",
+      "text": "r",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 29,
+    "fields": {
+      "braille": "011010",
+      "text": "s",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 30,
+    "fields": {
+      "braille": "011110",
+      "text": "t",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 31,
+    "fields": {
+      "braille": "100011",
+      "text": "u",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 32,
+    "fields": {
+      "braille": "101011",
+      "text": "v",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 33,
+    "fields": {
+      "braille": "011101",
+      "text": "w",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 34,
+    "fields": {
+      "braille": "110011",
+      "text": "x",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 35,
+    "fields": {
+      "braille": "110111",
+      "text": "y",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 36,
+    "fields": {
+      "braille": "100111",
+      "text": "z",
+      "text_type": "letter"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 37,
+    "fields": {
+      "braille": "101000",
+      "text": "but",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 38,
+    "fields": {
+      "braille": "110000",
+      "text": "can",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 39,
+    "fields": {
+      "braille": "110100",
+      "text": "do",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 40,
+    "fields": {
+      "braille": "100100",
+      "text": "every",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 41,
+    "fields": {
+      "braille": "111000",
+      "text": "from",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 42,
+    "fields": {
+      "braille": "111100",
+      "text": "go",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 43,
+    "fields": {
+      "braille": "101100",
+      "text": "have",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 44,
+    "fields": {
+      "braille": "011100",
+      "text": "just",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 45,
+    "fields": {
+      "braille": "100010",
+      "text": "knowledge",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 46,
+    "fields": {
+      "braille": "101010",
+      "text": "like",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 47,
+    "fields": {
+      "braille": "101010",
+      "text": "more",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 48,
+    "fields": {
+      "braille": "110110",
+      "text": "not",
+      "text_type": "word"
+    }
+  },
+
+  {
+    "model": "app_translator.brailletext",
+    "pk": 49,
+    "fields": {
+      "braille": "111010",
+      "text": "people",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 50,
+    "fields": {
+      "braille": "111110",
+      "text": "quite",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 51,
+    "fields": {
+      "braille": "101110",
+      "text": "rather",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 52,
+    "fields": {
+      "braille": "011010",
+      "text": "so",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 53,
+    "fields": {
+      "braille": "011110",
+      "text": "that",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 54,
+    "fields": {
+      "braille": "100011",
+      "text": "us",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 55,
+    "fields": {
+      "braille": "101011",
+      "text": "very",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 56,
+    "fields": {
+      "braille": "110011",
+      "text": "it",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 57,
+    "fields": {
+      "braille": "110111",
+      "text": "you",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 58,
+    "fields": {
+      "braille": "100111",
+      "text": "as",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 59,
+    "fields": {
+      "braille": "111011",
+      "text": "and",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 60,
+    "fields": {
+      "braille": "111111",
+      "text": "for",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 61,
+    "fields": {
+      "braille": "101111",
+      "text": "of",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 62,
+    "fields": {
+      "braille": "001111",
+      "text": "the",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 63,
+    "fields": {
+      "braille": "011111",
+      "text": "with",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 64,
+    "fields": {
+      "braille": "011101",
+      "text": "will",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 65,
+    "fields": {
+      "braille": "011111",
+      "text": "with",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 66,
+    "fields": {
+      "braille": "001011",
+      "text": "his",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 67,
+    "fields": {
+      "braille": "000110",
+      "text": "in",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 68,
+    "fields": {
+      "braille": "000111",
+      "text": "was",
+      "text_type": "word"
+    }
+  },
+  {
+    "model": "app_translator.brailletext",
+    "pk": 69,
+    "fields": {
+      "braille": "001110",
+      "text": "to",
+      "text_type": "word"
+    }
+  }
+]
