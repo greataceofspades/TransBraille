@@ -402,6 +402,7 @@ def translate(request):
     res = result()
     remove(splitcells)
 
+master
     return JsonResponse({ "data": res })
 
 def fetch_db(request):
@@ -409,3 +410,6 @@ def fetch_db(request):
     serialized = serializers.serialize("json", BrailleText.objects.filter(text_type=q))
     data = json.loads(serialized)
     return JsonResponse({ "data": data })
+=======
+    return JsonResponse({ "response": "true" })
+main

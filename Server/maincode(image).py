@@ -25,19 +25,8 @@ def pre(path):
     cv2.imwrite('image.png',mask)
     paths = "image.png"
     return paths
-
-#Resizing image    
-def resize(path):
-    basewidth = 2016
-    img = Image.open(path)
-    wpercent = (basewidth / float(img.size[0]))
-    hsize = int((float(img.size[1]) * float(wpercent)))
-    img = img.resize((basewidth, hsize), PIL.Image.ANTIALIAS)
-    img.save('image.png')
-    paths = "image.png"
-    return paths
             
-#Splitting image to 28x6
+#Splitting image to 28x6 Dimensions 1280x720
 def split(path): #28x6
     img = cv2.imread(path)
     dimensions = img.shape
@@ -45,10 +34,12 @@ def split(path): #28x6
     width = img.shape[1] 
     channels = img.shape[2] 
     x=0
-    for r in range(0,img.shape[0],int(height/6)):
-        for c in range(0,img.shape[1],int(width/28)):
+    for r in range(0,img.shape[0],int(height/7.27)):
+        for c in range(0,img.shape[1],int(width/17.77)):
             x=x+1
-            cv2.imwrite(f"img{x}.png",img[r:r+int(height/6), c:c+int(width/28),:])
+            if (x<=126):
+                cv2.imwrite(f"img{x}.png",img[r:r+int(height/7), c:c+int(width/17),:])
+            
     paths = x
     return paths
 
@@ -91,7 +82,7 @@ def cell(path): #split cell to 6 parts
     else:
         f.write(code + " ")
 
-    if (path == "img28.png" or path == "img56.png" or path == "img84.png" or path == "img112.png" or path == "img140.png"):
+    if (path == "img18.png" or path == "img36.png" or path == "img54.png" or path == "img72.png" or path == "img90.png" or path == "img108.png"):
         f.write("\n000000\n")
     f.close()
     return code
@@ -298,13 +289,15 @@ def contracted(string):
 #Deleting files that have been made
 def remove():
     for x in range(splitcells):
-        x = x+1
-        os.remove(f"img{x}.png")
+        if (x<=125):
+            x = x+1
+            os.remove(f"img{x}.png")
 
     sample = 6
     for x in range(sample):
-        x = x+1
-        os.remove(f"image{x}.png")
+        if (x<=125):
+            x = x+1
+            os.remove(f"image{x}.png")
 
     os.remove("image.png")
     os.remove("code.txt")
@@ -380,8 +373,7 @@ def spaces():
 
 #main code
 def maincode(image):
-    preprocess = pre(image)
-    re = resize(preprocess)
+    re = pre(image)
     splitcells = int(split(re))
     word = []
     for x in range(splitcells):
