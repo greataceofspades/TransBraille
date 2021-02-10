@@ -12,6 +12,9 @@ from io import BytesIO
 import base64
 from django.http import JsonResponse 
 from django.views.decorators.csrf import csrf_exempt
+from django.core import serializers
+
+from app_translator.models import BrailleText
 
 #Selecting and opening image file
 def pre(path):
@@ -71,7 +74,7 @@ def cell(path): #split cell to 6 parts
     for k in range(int(x)):
         k=k+1
         imgh = Image.open(f"image{k}.png")
-        temp = Image.open('../see.png')
+        temp = Image.open('see.png')
         k = np.array(imgh)
         y = np.array(temp)
         if (k==y).all():
@@ -293,13 +296,13 @@ def contracted(string):
 #Deleting files that have been made
 def remove(splitcells):
     for x in range(splitcells):
-        if (x<=126):
+        if (x<=125):
             x = x+1
             os.remove(f"img{x}.png")
 
     sample = 6
     for x in range(sample):
-        if (x<=126):
+        if (x<=125):
             x = x+1
             os.remove(f"image{x}.png")
 
@@ -359,6 +362,7 @@ def result():
     listOfLines = f.readlines()
     print (listOfLines)
     f.close()
+    return listOfLines
     
 #Removing excess spaces
 def spaces():
@@ -371,9 +375,6 @@ def spaces():
         if line.strip() != "":
             f.write(line.strip() + " ")           
     f.close()
-
-
-
 
 @csrf_exempt
 def translate(request):
@@ -398,7 +399,17 @@ def translate(request):
 
     algo()
     spaces()
-    result()
+    res = result()
     remove(splitcells)
 
+master
+    return JsonResponse({ "data": res })
+
+def fetch_db(request):
+    q = request.GET.get('q', None)
+    serialized = serializers.serialize("json", BrailleText.objects.filter(text_type=q))
+    data = json.loads(serialized)
+    return JsonResponse({ "data": data })
+=======
     return JsonResponse({ "response": "true" })
+main
