@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from app_translator.views import translate, fetch_db
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('translate/', translate),
+    path('transbraille/', fetch_db),
 ]
