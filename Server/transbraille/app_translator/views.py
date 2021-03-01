@@ -21,7 +21,7 @@ def pre(path):
     img= cv2.imread(path,0)
     #Invert the image
     img = 255 - img
-    ret, thresh = cv2.threshold(img, 120, 255, cv2.THRESH_BINARY)
+    ret, thresh = cv2.threshold(img, 110, 225, cv2.THRESH_BINARY)
     blur = cv2.blur(thresh,(5,5))
     kernel = np.ones((5,5),np.uint8)
     erosion = cv2.erode(blur,kernel,iterations = 1)
@@ -88,9 +88,6 @@ def cell(path): #split cell to 6 parts
         f.write("\n" + code + "\n")
     else:
         f.write(code + " ")
-
-    if (path == "img18.png" or path == "img36.png" or path == "img54.png" or path == "img72.png" or path == "img90.png" or path == "img108.png"):
-        f.write("\n000000\n")
     f.close()
     return code
 
