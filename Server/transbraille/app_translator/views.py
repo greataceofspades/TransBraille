@@ -45,7 +45,7 @@ def split(path, horizontal, veritcal): #28x6
         for c in range(0,img.shape[1],int(width/veritcal)):
             x=x+1
             if (x<=126):
-                cv2.imwrite(f"img{x}.png",img[r:r+int(height/7), c:c+int(width/17),:])
+                cv2.imwrite(f"img{x}.png",img[r:r+int(height/horizontal), c:c+int(width/veritcal),:])
             
     paths = x
     return paths
