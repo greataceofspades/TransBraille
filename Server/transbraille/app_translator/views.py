@@ -34,21 +34,29 @@ def pre(path):
     return paths
             
 #Splitting image to 28x6 Dimensions 1280x720
-def split(path, horizontal, veritcal): #28x6
+def split(path): #28x6
     img = cv2.imread(path)
     dimensions = img.shape
     height = img.shape[0] 
     width = img.shape[1] 
     channels = img.shape[2] 
     x=0
-    for r in range(0,img.shape[0],int(height/horizontal)):
-        for c in range(0,img.shape[1],int(width/veritcal)):
+    for r in range(0,img.shape[0],int(height/7.27)):
+        for c in range(0,img.shape[1],int(width/17.77)):
             x=x+1
             if (x<=126):
-                cv2.imwrite(f"img{x}.png",img[r:r+int(height/horizontal), c:c+int(width/veritcal),:])
+                cv2.imwrite(f"img{x}.png",img[r:r+int(height/7.27), c:c+int(width/17.77),:])
             
     paths = x
     return paths
+
+#Resizing image for excess spaces on splitted image
+def resize2(path):
+    with open(path, 'r+b') as f:
+        with Image.open(f) as image:
+            cover = resizeimage.resize_cover(image, [72, 99])
+            cover.save(path, image.format)
+    return path
 
 #Splitting the splitted cells to 6
 def cell(path): #split cell to 6 parts
@@ -376,13 +384,14 @@ def translate(request):
         f.write(imgdata)
 
     re = pre(filename)
-    splitcells = int(split(re, horizontal, veritcal))
+    splitcells = int(split(re))
     word = []
     for x in range(splitcells):
         if (x<=125):
             temp = ""
             temp = f"img{x+1}.png"
-            trial= cell(temp)
+            trial = resize2(temp)
+            trial= cell(trial)
             word.append(trial)  
 
     algo()
