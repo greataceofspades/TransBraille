@@ -89,6 +89,10 @@ def cell(path): #split cell to 6 parts
     else:
         f.write(code + " ")
     f.close()
+    
+    if (path == "img13.png" or path == "img26.png" or path == "img39.png" or path == "img52.png" or path == "img65.png"):
+        f.write("\n000000\n")
+    f.close()
     return code
 
 #Conversion of number code to alpha numeric keys
