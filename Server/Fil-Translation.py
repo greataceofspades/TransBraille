@@ -33,19 +33,19 @@ def pre(path):
     paths = "image.png"
     return paths
             
-#Splitting image to 28x6 Dimensions 1280x720
-def split(path): #28x6
+#Splitting image to 12*6 Dimensions 1280x720
+def split(path): #12*6
     img = cv2.imread(path)
     dimensions = img.shape
     height = img.shape[0] 
     width = img.shape[1] 
     channels = img.shape[2] 
     x=0
-    for r in range(0,img.shape[0],int(height/7.27)):
-        for c in range(0,img.shape[1],int(width/17.77)):
+    for r in range(0,img.shape[0],int(height/6)):
+        for c in range(0,img.shape[1],int(width/12)):
             x=x+1
             if (x<=126):
-                cv2.imwrite(f"img{x}.png",img[r:r+int(height/7.27), c:c+int(width/17.77),:])
+                cv2.imwrite(f"img{x}.png",img[r:r+int(height/6), c:c+int(width/12),:])
             
     paths = x
     return paths
