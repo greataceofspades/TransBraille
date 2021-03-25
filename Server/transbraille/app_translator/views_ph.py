@@ -33,19 +33,19 @@ def pre(path):
     paths = "image.png"
     return paths
             
-#Splitting image to 12*6 Dimensions 1280x720
-def split(path): #12*6
+#Splitting image to 28x6 Dimensions 1280x720
+def split(path): #28x6
     img = cv2.imread(path)
     dimensions = img.shape
     height = img.shape[0] 
     width = img.shape[1] 
     channels = img.shape[2] 
     x=0
-    for r in range(0,img.shape[0],int(height/6)):
-        for c in range(0,img.shape[1],int(width/12)):
+    for r in range(0,img.shape[0],int(height/7.27)):
+        for c in range(0,img.shape[1],int(width/17.77)):
             x=x+1
             if (x<=126):
-                cv2.imwrite(f"img{x}.png",img[r:r+int(height/6), c:c+int(width/12),:])
+                cv2.imwrite(f"img{x}.png",img[r:r+int(height/7.27), c:c+int(width/17.77),:])
             
     paths = x
     return paths
@@ -88,10 +88,6 @@ def cell(path): #split cell to 6 parts
         f.write("\n" + code + "\n")
     else:
         f.write(code + " ")
-    f.close()
-    
-    if (path == "img13.png" or path == "img26.png" or path == "img39.png" or path == "img52.png" or path == "img65.png"):
-        f.write("\n000000\n")
     f.close()
     return code
 
@@ -228,69 +224,53 @@ def punctuation(string):
 def contracted(string):
     word = ''
     if string == "101000":
-        word = 'but'
+        word = 'bakit'
     if string == "110000":
-        word = 'can'
+        word = 'kanya'
     if string ==  "110100":
-        word = 'do'
-    if string ==  "100100":
-        word = 'every'
+        word = 'dahil'
     if string == "111000":
-        word = 'from'
+        word = 'paano'
     if string == "111100":
-        word = 'go'
+        word = 'gaano'
     if string == "101100":
-        word = 'have'
+        word = 'hindi'
     if string == "011100":
-        word = 'just'
+        word = 'hakbang'
     if string == "100010":
-        word = 'knowledge'
+        word = 'kaya'
     if string == "101010":
-        word = 'like'
-    if string == "101010":
-        word = 'more'
+        word = 'lamang'
     if string == "110110":
-        word = 'not'
+        word = 'ngayon'
     if string ==  "111010":
-        word = 'people'
+        word = 'kailan'
     if string == "111110":
-        word = 'quite'
-    if string == "101110":
-        word = 'rather'
+        word = 'rin'
     if string == "011010": 
-        word = 'so'
+        word = 'sang-ayon'
     if string == "011110":
-        word = 'that'
+        word = 'tayo'
     if string == "100011":
-        word = 'us'
+        word = 'upang'
     if string == "101011":
-        word = 'very'
+        word = 'bagamat'
     if string ==  "110011":
-        word = 'it'
+        word = 'ito'
     if string == "110111":
-        word = 'you'
+        word = 'yaman'
     if string == "100111":
-        word = 'as'
-    if string ==  "111011":
-        word = 'and'
+        word = 'sa'
     if string == "111111":
-        word = 'for'
+        word = 'mahal'
     if string == "101111":
-        word = 'of'
-    if string == "001111":
-        word = 'the'
-    if string == "011111":
-        word = 'with'
+        word = 'hanggang'
     if string == "011101":
-        word = 'will'
-    if string == "001011":
-        word = 'his'
-    if string == "000110": 
-        word = 'in'
-    if string ==  "000111":
-        word = 'was'
-    if string == "001110":
-        word = 'to'
+        word = 'wala'
+    if string == "011000":
+        word = 'ikaw'
+    if string == "110010":
+        word = 'mga'
     word = word.strip()
     return word
 
@@ -378,7 +358,7 @@ def spaces():
     f.close()
 
 @csrf_exempt
-def translate(request):
+def translate_ph(request):
     data = json.loads(request.body)
     image = data.get("braille")
 

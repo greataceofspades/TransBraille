@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -107,3 +108,18 @@ media/
 *.pyc
 *.db
 *.pid
+=======
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
+>>>>>>> 53f557439ea99f6250b69186a43d5b963a5eca55
