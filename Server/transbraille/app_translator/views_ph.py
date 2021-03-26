@@ -88,7 +88,6 @@ def cell(path): #split cell to 6 parts
         f.write("\n" + code + "\n")
     else:
         f.write(code + " ")
-    f.close()
     
     if (path == "img13.png" or path == "img26.png" or path == "img39.png" or path == "img52.png" or path == "img65.png"):
         f.write("\n000000\n")
@@ -281,7 +280,7 @@ def contracted(string):
 #Deleting files that have been made
 def remove(splitcells):
     for x in range(splitcells):
-        if (x<=125):
+        if (x<=splitcells):
             x = x+1
             os.remove(f"img{x}.png")
 
