@@ -227,69 +227,53 @@ def punctuation(string):
 def contracted(string):
     word = ''
     if string == "101000":
-        word = 'but'
+        word = 'bakit'
     if string == "110000":
-        word = 'can'
+        word = 'kanya'
     if string ==  "110100":
-        word = 'do'
-    if string ==  "100100":
-        word = 'every'
+        word = 'dahil'
     if string == "111000":
-        word = 'from'
+        word = 'paano'
     if string == "111100":
-        word = 'go'
+        word = 'gaano'
     if string == "101100":
-        word = 'have'
+        word = 'hindi'
     if string == "011100":
-        word = 'just'
+        word = 'hakbang'
     if string == "100010":
-        word = 'knowledge'
+        word = 'kaya'
     if string == "101010":
-        word = 'like'
-    if string == "101010":
-        word = 'more'
+        word = 'lamang'
     if string == "110110":
-        word = 'not'
+        word = 'ngayon'
     if string ==  "111010":
-        word = 'people'
+        word = 'kailan'
     if string == "111110":
-        word = 'quite'
-    if string == "101110":
-        word = 'rather'
+        word = 'rin'
     if string == "011010": 
-        word = 'so'
+        word = 'sang-ayon'
     if string == "011110":
-        word = 'that'
+        word = 'tayo'
     if string == "100011":
-        word = 'us'
+        word = 'upang'
     if string == "101011":
-        word = 'very'
+        word = 'bagamat'
     if string ==  "110011":
-        word = 'it'
+        word = 'ito'
     if string == "110111":
-        word = 'you'
+        word = 'yaman'
     if string == "100111":
-        word = 'as'
-    if string ==  "111011":
-        word = 'and'
+        word = 'sa'
     if string == "111111":
-        word = 'for'
+        word = 'mahal'
     if string == "101111":
-        word = 'of'
-    if string == "001111":
-        word = 'the'
-    if string == "011111":
-        word = 'with'
+        word = 'hanggang'
     if string == "011101":
-        word = 'will'
-    if string == "001011":
-        word = 'his'
-    if string == "000110": 
-        word = 'in'
-    if string ==  "000111":
-        word = 'was'
-    if string == "001110":
-        word = 'to'
+        word = 'wala'
+    if string == "011000":
+        word = 'ikaw'
+    if string == "110010":
+        word = 'mga'
     word = word.strip()
     return word
 
@@ -377,7 +361,7 @@ def spaces():
     f.close()
 
 @csrf_exempt
-def translate(request):
+def translate_ph(request):
     data = json.loads(request.body)
     image = data.get("braille")
 

@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 
 from app_translator.views import translate, fetch_db
+from app_translator.views_ph import translate_ph
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('translate/', translate),
+    path('translate-english/', translate),
+    path('translate-filipino/', translate_ph),
     path('transbraille/', fetch_db),
 ]
