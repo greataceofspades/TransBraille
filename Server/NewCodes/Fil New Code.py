@@ -327,7 +327,10 @@ def spaces():
 array = ['array from john']         #accepting and storing of array
 removetxt()                         #removing txtfiles
 word = []                           #Storing array for the write
-for path in array:
+for x in array:
+    r = requests.get(x, allow_redirects=True)
+    open('imagedl.png', 'wb').write(r.content)
+    path = 'imagedl.png'
     imgprc = pre(path)              #Black and white process
     conv = cell(imgprc)             #Splitting image to 6
     word.append(conv)               #Adding the new letter to the word
@@ -335,4 +338,3 @@ algo()                              #Adding new line
 spaces()                            #Removing excess spaces
 result()                            #Displaying of results  
 remove()                            #removing image files
-
