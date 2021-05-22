@@ -4,6 +4,7 @@ import argparse
 import numpy as np
 import PIL.ImageOps
 import os
+import requests
 from matplotlib import pyplot as plt
 from PIL import Image
 from resizeimage import resizeimage
