@@ -27,6 +27,14 @@ def pre(path):
     paths = "image.png"
     return paths
 
+#Resizing image for excess spaces on splitted image
+def resize2(path):
+    with open(path, 'r+b') as f:
+        with Image.open(f) as image:
+            cover = resizeimage.resize_cover(image, [72, 99])
+            cover.save(path, image.format)
+    return path
+
 #Splitting the splitted cells to 6
 def cell(path): #split cell to 6 parts
     img = cv2.imread(path)
@@ -245,6 +253,10 @@ def contracted(string):
 
 #Deleting images
 def remove():
+    os.remove("image.png")
+    os.remove("code.txt")
+    os.remove("converted.txt")
+    os.remove("result.txt")
     sample = 6
     for x in range(sample):
         if (x<=125):
@@ -333,7 +345,8 @@ for x in array:
     open('imagedl.png', 'wb').write(r.content)
     path = 'imagedl.png'
     imgprc = pre(path)              #Black and white process
-    conv = cell(imgprc)             #Splitting image to 6
+    trial = resize2(imgprc)         #resizing
+    conv = cell(trial)              #Splitting image to 6
     word.append(conv)               #Adding the new letter to the word
 algo()                              #Adding new line
 spaces()                            #Removing excess spaces
