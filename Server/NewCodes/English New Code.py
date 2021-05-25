@@ -269,6 +269,10 @@ def contracted(string):
 
 #Deleting images
 def remove():
+    os.remove("image.png")
+    os.remove("code.txt")
+    os.remove("converted.txt")
+    os.remove("result.txt")
     sample = 6
     for x in range(sample):
         if (x<=125):
