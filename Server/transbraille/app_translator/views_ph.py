@@ -3,6 +3,7 @@ import argparse
 import numpy as np
 import PIL.ImageOps
 import os
+import requests
 import json
 from matplotlib import pyplot as plt
 from PIL import Image
@@ -31,23 +32,6 @@ def pre(path):
     rows,cols=mask.shape
     cv2.imwrite('image.png',mask)
     paths = "image.png"
-    return paths
-            
-#Splitting image to 12*6 Dimensions 1280x720
-def split(path): #12*6
-    img = cv2.imread(path)
-    dimensions = img.shape
-    height = img.shape[0] 
-    width = img.shape[1] 
-    channels = img.shape[2] 
-    x=0
-    for r in range(0,img.shape[0],int(height/6)):
-        for c in range(0,img.shape[1],int(width/12)):
-            x=x+1
-            if (x<=126):
-                cv2.imwrite(f"img{x}.png",img[r:r+int(height/6), c:c+int(width/12),:])
-            
-    paths = x
     return paths
 
 #Resizing image for excess spaces on splitted image
@@ -88,9 +72,6 @@ def cell(path): #split cell to 6 parts
         f.write("\n" + code + "\n")
     else:
         f.write(code + " ")
-    
-    if (path == "img13.png" or path == "img26.png" or path == "img39.png" or path == "img52.png" or path == "img65.png"):
-        f.write("\n000000\n")
     f.close()
     return code
 
@@ -277,23 +258,26 @@ def contracted(string):
     word = word.strip()
     return word
 
-#Deleting files that have been made
-def remove(splitcells):
-    for x in range(splitcells):
-        if (x<=splitcells):
-            x = x+1
-            os.remove(f"img{x}.png")
-
+#Deleting images
+def remove():
+    os.remove("image.png")
+    os.remove("code.txt")
+    os.remove("converted.txt")
+    os.remove("result.txt")
     sample = 6
     for x in range(sample):
         if (x<=125):
             x = x+1
             os.remove(f"image{x}.png")
 
-    os.remove("image.png")
-    os.remove("code.txt")
-    os.remove("converted.txt")
-    os.remove("result.txt")
+#Deleting text
+def removetxt():
+    if (os.path.exists('code.txt')== "True"):
+        os.remove("code.txt")
+    if (os.path.exists('converted.txt')== "True"):
+        os.remove("converted.txt")
+    if (os.path.exists('result.txt')== "True"):
+        os.remove("result.txt")
     
 #Converting of numbers to text files
 def singular(string):
@@ -363,28 +347,23 @@ def spaces():
 @csrf_exempt
 def translate_ph(request):
     data = json.loads(request.body)
-    image = data.get("braille")
-
-    imgdata = base64.b64decode(image)
-    filename = 'some_image.jpg'
-    with open(filename, 'wb') as f:
-        f.write(imgdata)
-
-    re = pre(filename)
-    splitcells = int(split(re))
-    word = []
-    for x in range(splitcells):
-        if (x<=125):
-            temp = ""
-            temp = f"img{x+1}.png"
-            trial = resize2(temp)
-            trial= cell(trial)
-            word.append(trial)  
-
-    algo()
-    spaces()
-    res = result()
-    remove(splitcells)
+    array = data['braille']         #accepting and storing of array
+    print(array)
+    removetxt()                         #removing txtfiles
+    word = []                           #Storing array for the write
+    for x in array:
+        r = requests.get(x, allow_redirects=True)
+        open('imagedl.png', 'wb').write(r.content)
+        path = 'imagedl.png'
+        imgprc = pre(path)              #Black and white process
+        trial = resize2(imgprc)         #resizing
+        conv = cell(trial)              #Splitting image to 6
+        word.append(conv)               #Adding the new letter to the word
+    algo()                              #Adding new line
+    spaces()                            #Removing excess spaces
+    res = result()                            #Displaying of results  
+    remove()                            #removing image files
+    
     return JsonResponse({ "data": res })
 
 def fetch_db(request):
