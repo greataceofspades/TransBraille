@@ -15,7 +15,7 @@ def pre(path):
     img= cv2.imread(path,0)
     #Invert the image
     img = 255 - img
-    ret, thresh = cv2.threshold(img, 110, 225, cv2.THRESH_BINARY)
+    ret, thresh = cv2.threshold(img, 103, 70, cv2.THRESH_BINARY)
     blur = cv2.blur(thresh,(5,5))
     kernel = np.ones((5,5),np.uint8)
     erosion = cv2.erode(blur,kernel,iterations = 1)
@@ -337,7 +337,7 @@ def spaces():
     f.close()
 
 #main code
-array = ['array from john']         #accepting and storing of array
+array = ['demo_001.png', 'demo_002.png', 'demo_003.png', 'demo_004.png', 'demo_10.jpg', 'demo_005.png', 'demo_007.png', 'demo_9.jpg', 'demo_007.png', 'space.png', 'demo_12.png', 'space.png', 'demo_13.png']         #accepting and storing of array
 removetxt()                         #removing txtfiles
 word = []                           #Storing array for the write
 for x in array:
