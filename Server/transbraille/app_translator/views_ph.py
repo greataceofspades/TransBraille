@@ -22,7 +22,7 @@ def pre(path):
     img= cv2.imread(path,0)
     #Invert the image
     img = 255 - img
-    ret, thresh = cv2.threshold(img, 150, 300, cv2.THRESH_BINARY)
+    ret, thresh = cv2.threshold(img, 103, 70, cv2.THRESH_BINARY)
     blur = cv2.blur(thresh,(5,5))
     kernel = np.ones((5,5),np.uint8)
     erosion = cv2.erode(blur,kernel,iterations = 1)
