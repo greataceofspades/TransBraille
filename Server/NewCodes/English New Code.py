@@ -329,7 +329,7 @@ def algo():
             f.write("")
         wordtext = wordtext + contracted(line.strip())
         if wordtext == "":
-            wordtext = wordtext + singular(line.strip())
+            wordtext = wordtext + uncontracted(line.strip())
         f.write(wordtext + "\n")
     f.close()
 
